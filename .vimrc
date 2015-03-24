@@ -101,3 +101,12 @@ set cmdwinheight=15 " height of the command-line window
 
 "" characterset
 set encoding=utf-8 " character encoding inside Vim
+
+
+" Define commands
+"" command to see the difference between the current buffer and the file.
+"" copied from vimrc_example.vim
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
