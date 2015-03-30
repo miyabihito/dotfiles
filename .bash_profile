@@ -13,6 +13,6 @@ fi
 
 
 # load script outside this repository
-if [ -r ~/.bash_extra.sh ]; then
-	. ~/.bash_extra.sh
+if [ -r ~/.bash_extra ]; then
+	. ~/.bash_extra
 fi

@@ -10,4 +10,4 @@
 	br = branch
 	rmt = remote
 [include]
-	path = ~/.git-extra-config
+	path = ~/.gitconfig_extra
