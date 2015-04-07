@@ -19,6 +19,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
 "NeoBundle 'honza/vim-snippets'
 NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -64,6 +66,20 @@ endif
 
 " for use of vim-snippets
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+""""""""""""""""""""""
+
+""""""" unite """"""""
+nnoremap  [unite]  <Nop>
+nmap      <Space>u  [unite]
+
+nnoremap  [unite]f :<C-u>Unite -start-insert -default-action=tabopen -prompt=> file_rec buffer<CR>
+nnoremap  [unite]y :<C-u>Unite history/yank<CR>
+nnoremap  [unite]s :<C-u>Unite source<CR>
+nnoremap  [unite]c :<C-u>Unite -auto-preview colorscheme<CR>
+
+let g:unite_source_history_yank_enable = 1
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 """"""""""""""""""""""
 
 
