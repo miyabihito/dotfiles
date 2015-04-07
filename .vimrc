@@ -121,6 +121,12 @@ set cmdwinheight=15 " height of the command-line window
 set encoding=utf-8 " character encoding inside Vim
 
 
+" Key mappings
+noremap tn gt
+noremap tp gT
+noremap tc :tabnew<CR>
+
+
 " Define commands
 "" command to see the difference between the current buffer and the file.
 "" copied from vimrc_example.vim
