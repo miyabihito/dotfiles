@@ -94,7 +94,7 @@ set cul          " カーソル行の強調表示
 set hls          " highlight search
 set is           " incremental search
 set list         " TAB等の可視化
-set listchars=tab:>-,trail:- " TABとSPACEの表示指定 eol等も指定できる
+set listchars=tab:▸\ ,trail:- " TABとSPACEの表示指定 eol等も指定できる
 
 "" edit
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
