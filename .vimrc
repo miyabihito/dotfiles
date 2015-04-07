@@ -69,7 +69,9 @@ endif
 
 " Vim settings
 "" display
-colorscheme monokai " カラースキーマの指定
+colorscheme Monokai " カラースキーマの指定
+""" dark: Monokai, hybrid, jellybeans, Tomorrow-Night-Bright
+""" bright: hybrid-light
 syntax on        " 構文強調表示
 set number       " 行番号表示
 set cul          " カーソル行の強調表示
