@@ -127,10 +127,20 @@ noremap tp gT
 noremap tc :tabnew<CR>
 
 
-" Define commands
+" Definition of commands
 "" command to see the difference between the current buffer and the file.
 "" copied from vimrc_example.vim
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
+endif
+
+"" alias :e $MYVIMRC
+if !exists(":EditRc")
+  command EditRc edit $MYVIMRC
+endif
+
+"" alias :so $MYVIMRC
+if !exists(":ReloadRc")
+  command ReloadRc source $MYVIMRC
 endif
