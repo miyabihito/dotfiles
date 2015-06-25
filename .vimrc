@@ -137,7 +137,7 @@ endif
 
 "" alias :e $MYVIMRC
 if !exists(":EditRc")
-  command EditRc edit $MYVIMRC
+  command EditRc tabnew $MYVIMRC
 endif
 
 "" alias :so $MYVIMRC
