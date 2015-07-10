@@ -168,7 +168,9 @@ if !exists(":EditRc")
   command EditRc tabnew $MYVIMRC
 endif
 
-"" alias :so $MYVIMRC
-if !exists(":ReloadRc")
-  command ReloadRc source $MYVIMRC
-endif
+
+" Definition of autocommands
+augroup reload_vimrc
+	autocmd!
+	autocmd BufWritePost *vimrc nested source $MYVIMRC
+augroup END
