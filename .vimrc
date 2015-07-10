@@ -25,6 +25,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'itchyny/lightline.vim'
 
 " Required:
 call neobundle#end()
@@ -82,6 +83,32 @@ let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 """"""""""""""""""""""
 
+""""" lightline """"""
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\ 	'left': [ [ 'mode', 'paste' ],
+	\ 		  [ 'git_branch', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component': {
+	\ 	'readonly': '%{&readonly?"":""}',
+	\ },
+	\ 'component_function': {
+	\ 	'git_branch': 'LlGitBranch'
+	\ },
+	\ 'separator': { 'left': '', 'right': '' },
+	\ 'subseparator': { 'left': '', 'right': '' }
+\ }
+
+function! LlGitBranch()
+	if exists("*fugitive#head")
+		let branch = fugitive#head()
+		return strlen(branch) ? ' '.branch : ''
+	endif
+	return ''
+endfunction
+""""""""""""""""""""""
+
 
 " Vim settings
 "" display
@@ -100,6 +127,7 @@ set listchars=tab:▸\ ,trail:- " TABとSPACEの表示指定 eol等も指定で�
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 "" window
+set laststatus=2 " always display status line
 set sb           " splitbelow
 set spr          " splitright
 set helpheight=100
@@ -109,7 +137,7 @@ set stal=2       " show tabline always
 
 "" info
 set showcmd      " 入力途中のコマンドの表示
-set showmode     " 現在のモードの表示
+set noshowmode   " 現在のモードを非表示（lightlineで表示されるので）
 set ruler        " カーソル位置の表示
 
 "" command line

@@ -16,3 +16,9 @@ You can customize installation with the following variables.
 ## Vim
 ### NeoBundle (Vim plugin manager)
 Install [NeoBundle](https://github.com/Shougo/neobundle.vim) and configured bundles.
+
+### Powerline fonts
+Make appearance cool with powerline fonts.
+
+1. Download and install the fonts. See <https://github.com/powerline/fonts>.
+2. Configure terminal to use 'Inconsolata for Powerline' font.
