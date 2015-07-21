@@ -1,4 +1,4 @@
-"NeoBundle Scripts-----------------------------
+"NeoBundle Scripts----------------------------- {{{
 if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
@@ -37,16 +37,17 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
+" }}}
 
 
-" Plugin settings
-""""" neocomplete """""
+" Plugin settings {{{
+"" neocomplete {{{
 if has('lua')
   let g:neocomplete#enable_at_startup = 1
 endif
-"""""""""""""""""""""""
+"" }}}
 
-""""" neosnippet """""
+"" neosnippet {{{
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -67,9 +68,9 @@ endif
 
 " for use of vim-snippets
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-""""""""""""""""""""""
+"" }}}
 
-""""""" unite """"""""
+"" unite {{{
 nnoremap  [unite]  <Nop>
 nmap      <Space>u  [unite]
 
@@ -81,9 +82,9 @@ nnoremap  [unite]c :<C-u>Unite -auto-preview colorscheme<CR>
 let g:unite_source_history_yank_enable = 1
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-""""""""""""""""""""""
+"" }}}
 
-""""" lightline """"""
+"" lightline {{{
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ 'active': {
@@ -107,10 +108,11 @@ function! LlGitBranch()
 	endif
 	return ''
 endfunction
-""""""""""""""""""""""
+"" }}}
+" }}}
 
 
-" Vim settings
+" Option settings {{{
 "" display
 colorscheme Monokai " カラースキーマの指定
 """ dark: Monokai, hybrid, jellybeans, Tomorrow-Night-Bright
@@ -147,15 +149,17 @@ set cmdwinheight=15 " height of the command-line window
 
 "" characterset
 set encoding=utf-8 " character encoding inside Vim
+" }}}
 
 
-" Key mappings
+" Key mappings {{{
 noremap tn gt
 noremap tp gT
 noremap tc :tabnew<CR>
+" }}}
 
 
-" Definition of commands
+" Definition of commands {{{
 "" command to see the difference between the current buffer and the file.
 "" copied from vimrc_example.vim
 if !exists(":DiffOrig")
@@ -167,10 +171,17 @@ endif
 if !exists(":EditRc")
   command EditRc tabnew $MYVIMRC
 endif
+" }}}
 
 
-" Definition of autocommands
+" Definition of autocommands {{{
 augroup reload_vimrc
 	autocmd!
 	autocmd BufWritePost *vimrc nested source $MYVIMRC
 augroup END
+
+augroup vim_folding
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
