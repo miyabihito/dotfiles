@@ -26,6 +26,7 @@ NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 " Required:
 call neobundle#end()
@@ -108,6 +109,10 @@ function! LlGitBranch()
 	endif
 	return ''
 endfunction
+"" }}}
+
+"" editorconfig {{{
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "" }}}
 " }}}
 
