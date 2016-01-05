@@ -23,6 +23,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 "NeoBundle 'honza/vim-snippets'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
@@ -146,6 +147,9 @@ set stal=2       " show tabline always
 set showcmd      " 入力途中のコマンドの表示
 set noshowmode   " 現在のモードを非表示（lightlineで表示されるので）
 set ruler        " カーソル位置の表示
+
+"" swap file
+set updatetime=250 " for gitgutter
 
 "" command line
 set history=500  " keep command history
