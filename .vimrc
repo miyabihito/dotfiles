@@ -129,7 +129,7 @@ let NERDTreeShowHidden=1
 
 " Option settings {{{
 "" display
-colorscheme Monokai " カラースキーマの指定
+colorscheme hybrid " カラースキーマの指定
 """ dark: Monokai, hybrid, jellybeans, Tomorrow-Night-Bright
 """ bright: hybrid-light
 syntax on        " 構文強調表示
