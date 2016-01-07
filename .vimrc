@@ -28,6 +28,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'scrooloose/nerdtree'
 
 " Required:
 call neobundle#end()
@@ -114,6 +115,14 @@ endfunction
 
 "" editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+"" }}}
+
+"" NERDTree {{{
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '^\.git$[[dir]]', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
 "" }}}
 " }}}
 
