@@ -29,6 +29,7 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " Required:
 call neobundle#end()
@@ -123,6 +124,15 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '^\.git$[[dir]]', '\.swp$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
+"" }}}
+
+"" ctrlp {{{
+let g:ctrlp_show_hidden = 1
+"" lightlineとの競合解決(http://leafcage.hateblo.jp/entry/2013/10/21/lightlinevim-customize)
+let g:ctrlp_buffer_func = {'enter': 'CtrlPEnter'}
+function! CtrlPEnter()
+  let w:lightline = 0
+endfunction
 "" }}}
 " }}}
 
