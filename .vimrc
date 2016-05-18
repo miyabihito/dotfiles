@@ -237,4 +237,9 @@ augroup vim_folding
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+augroup vim_grep
+	autocmd!
+	autocmd QuickFixCmdPost *grep* cwindow
+augroup END
 " }}}
