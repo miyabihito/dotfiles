@@ -14,9 +14,6 @@ You can customize installation with the following variables.
     Customize the installation directory. The default is '~/dotfiles'.
 
 ## Vim
-### NeoBundle (Vim plugin manager)
-Install [NeoBundle](https://github.com/Shougo/neobundle.vim) and configured bundles.
-
 ### Powerline fonts
 Make appearance cool with powerline fonts.
 

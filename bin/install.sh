@@ -38,3 +38,23 @@ if [ ! -f ~/.git-prompt.sh ]; then
 fi
 
 echo 'Done.'
+
+
+# Vim Pluginのインストール
+echo 'Begin installing Vim plugins.'
+
+## Plugin Manager(NeoBundle)のインストール
+BUNDLE_DIR=~/.vim/bundle
+NEOBUNDLE_DIR="$BUNDLE_DIR/neobundle.vim"
+
+if [ -e "$NEOBUNDLE_DIR" ]; then
+	echo "NeoBundle already installed! Installation skipped."
+else
+	mkdir -p "$BUNDLE_DIR"
+	git clone https://github.com/Shougo/neobundle.vim "$NEOBUNDLE_DIR"
+fi
+
+## Pluginのインストール
+sh "$NEOBUNDLE_DIR"/bin/neoinstall
+
+echo 'Done.'
