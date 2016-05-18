@@ -39,6 +39,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'thinca/vim-quickrun'
 
 " Required:
 call neobundle#end()
@@ -142,6 +143,21 @@ let g:ctrlp_buffer_func = {'enter': 'CtrlPEnter'}
 function! CtrlPEnter()
   let w:lightline = 0
 endfunction
+"" }}}
+
+"" quickrun {{{
+let g:quickrun_config = {
+\ '_': {
+\   'runner': 'vimproc',
+\   'runner/vimproc/updatetime': 100,
+\ },
+\ 'node': {
+\   'type': 'javascript/nodejs',
+\ },
+\}
+
+" <C-c>で強制終了
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 "" }}}
 " }}}
 
