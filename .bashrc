@@ -20,15 +20,12 @@ shopt -s histappend
 
 
 # git
-if [ ! -f ~/.git-completion.bash ]; then
-	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+if [ -r ~/.git-completion.bash ]; then
+	. ~/.git-completion.bash
 fi
-if [ ! -f ~/.git-prompt.sh ]; then
-	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+if [ -r ~/.git-prompt.sh ]; then
+	. ~/.git-prompt.sh
 fi
-
-. ~/.git-completion.bash
-. ~/.git-prompt.sh
 
 
 # prompt
