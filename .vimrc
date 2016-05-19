@@ -40,6 +40,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'kannokanno/previm'
 
 " Required:
 call neobundle#end()
@@ -159,6 +160,10 @@ let g:quickrun_config = {
 " <C-c>で強制終了
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 "" }}}
+
+"" previm {{{
+let g:previm_open_cmd = 'open /Applications/Google\ Chrome.app'
+"" }}}
 " }}}
 
 
@@ -241,5 +246,10 @@ augroup END
 augroup vim_grep
 	autocmd!
 	autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+
+augroup detect_markdown
+	autocmd!
+	autocmd BufNewFile,BufRead *.md set filetype=markdown
 augroup END
 " }}}
