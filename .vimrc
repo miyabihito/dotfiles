@@ -41,6 +41,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'tpope/vim-surround'
 
 " Required:
 call neobundle#end()
