@@ -3,6 +3,8 @@
 	email = miyabihito.dev@gmail.com
 [color]
 	ui = auto
+[core]
+	editor = vim
 [alias]
 	st = status
 	co = checkout
