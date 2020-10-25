@@ -41,3 +41,11 @@ indent_size = 2
 [*.fish]
 indent_style = space
 indent_size = 4
+
+[*.rs]
+indent_style = space
+indent_size = 4
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
