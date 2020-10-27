@@ -30,6 +30,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('kannokanno/previm')
   call dein#add('tpope/vim-surround')
   call dein#add('posva/vim-vue')
+  call dein#add('tmux-plugins/vim-tmux-focus-events')
 
   " Required:
   call dein#end()
