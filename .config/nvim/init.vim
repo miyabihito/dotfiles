@@ -32,6 +32,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('posva/vim-vue')
   call dein#add('tmux-plugins/vim-tmux-focus-events')
   call dein#add('tpope/vim-commentary')
+  call dein#add('rust-lang/rust.vim')
 
   " Required:
   call dein#end()
