@@ -13,3 +13,5 @@
 	rmt = remote
 [include]
 	path = ~/.gitconfig_extra
+[init]
+	defaultBranch = main
